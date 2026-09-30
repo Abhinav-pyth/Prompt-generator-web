@@ -1,0 +1,190 @@
+import { PromptConfig } from './validation';
+
+export interface Template {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  icon: string;
+  config: Partial<PromptConfig>;
+}
+
+export const templates: Template[] = [
+  {
+    id: 'saas-landing',
+    name: 'SaaS Landing Page',
+    description: 'Modern SaaS product landing page with hero, features, pricing, and testimonials',
+    category: 'SaaS',
+    icon: 'Rocket',
+    config: {
+      projectDescription: 'Build a modern SaaS landing page for a project management tool. Include a compelling hero section with product screenshot, feature highlights with icons, pricing table with 3 tiers, customer testimonials, FAQ section, and a clear call-to-action.',
+      projectCategory: 'saas',
+      designDirection: 'minimal',
+      visualTheme: 'light',
+      techStack: 'nextjs',
+      codingAgent: 'claude-code',
+      animationLevel: 'polished',
+      responsiveTargets: ['mobile', 'tablet', 'desktop'],
+      requiredPages: 'Home page with hero, features grid (6 features), pricing table (3 tiers: Starter, Pro, Enterprise), testimonials section (3-4 quotes), FAQ accordion, CTA section, footer with links.',
+      deploymentTarget: 'vercel',
+      experienceLevel: 'expert',
+    },
+  },
+  {
+    id: 'portfolio',
+    name: 'Developer Portfolio',
+    description: 'Personal portfolio website showcasing projects, skills, and contact information',
+    category: 'Portfolio',
+    icon: 'User',
+    config: {
+      projectDescription: 'Create a personal developer portfolio website. Include an introduction/hero section, about me section, skills/tech stack visualization, project showcase with images and descriptions, blog section, and contact form. The design should be clean and professional with subtle animations.',
+      projectCategory: 'portfolio',
+      designDirection: 'minimal',
+      visualTheme: 'dark',
+      techStack: 'nextjs',
+      codingAgent: 'claude-code',
+      animationLevel: 'polished',
+      responsiveTargets: ['mobile', 'tablet', 'desktop'],
+      requiredPages: 'Home (hero + intro), About (skills, experience timeline), Projects (grid with filtering by tech), Blog (list with categories), Contact (form + social links).',
+      deploymentTarget: 'vercel',
+      experienceLevel: 'expert',
+    },
+  },
+  {
+    id: 'ecommerce',
+    name: 'E-Commerce Store',
+    description: 'Full-featured online store with product catalog, cart, and checkout',
+    category: 'E-Commerce',
+    icon: 'ShoppingBag',
+    config: {
+      projectDescription: 'Build an e-commerce website for a fashion brand. Include product catalog with filtering and search, product detail pages with image galleries, shopping cart with quantity management, checkout flow, user accounts with order history, and admin dashboard for product management.',
+      projectCategory: 'ecommerce',
+      designDirection: 'luxury',
+      visualTheme: 'light',
+      techStack: 'nextjs',
+      codingAgent: 'claude-code',
+      animationLevel: 'polished',
+      responsiveTargets: ['mobile', 'tablet', 'desktop'],
+      requiredPages: 'Home (featured products, categories, hero banner), Product listing (grid with filters), Product detail (gallery, description, reviews, related products), Cart, Checkout (multi-step), Account (orders, addresses), Admin dashboard.',
+      requiredFunctionality: 'Product search and filtering (category, price, size, color), shopping cart with persistent state, Stripe payment integration, user authentication, order tracking, product reviews and ratings, wishlist functionality.',
+      authDbApi: 'User authentication with email/password and OAuth (Google). PostgreSQL database for products, orders, and user data. Stripe for payment processing.',
+      deploymentTarget: 'vercel',
+      experienceLevel: 'expert',
+    },
+  },
+  {
+    id: 'dashboard',
+    name: 'Admin Dashboard',
+    description: 'Data-rich admin panel with charts, tables, and management interfaces',
+    category: 'Dashboard',
+    icon: 'LayoutDashboard',
+    config: {
+      projectDescription: 'Build a comprehensive admin dashboard for a SaaS analytics platform. Include overview metrics with charts, data tables with sorting and pagination, user management, settings panel, and notification system. The dashboard should handle large datasets efficiently.',
+      projectCategory: 'dashboard',
+      designDirection: 'corporate',
+      visualTheme: 'light',
+      techStack: 'nextjs',
+      codingAgent: 'cursor',
+      animationLevel: 'minimal',
+      responsiveTargets: ['tablet', 'desktop'],
+      requiredPages: 'Dashboard overview (KPIs, charts, recent activity), Analytics (detailed charts and reports), Users (table with CRUD), Settings (profile, notifications, integrations), Billing (plans, invoices).',
+      requiredFunctionality: 'Interactive charts (line, bar, pie, area), data tables with sorting/filtering/pagination, real-time notifications, CSV export, date range picker, sidebar navigation with collapsible sections.',
+      authDbApi: 'JWT-based authentication with role-based access control (admin, editor, viewer). PostgreSQL for data storage. Redis for caching and real-time updates.',
+      deploymentTarget: 'vercel',
+      experienceLevel: 'expert',
+    },
+  },
+  {
+    id: 'agency',
+    name: 'Creative Agency',
+    description: 'Bold, creative agency website with portfolio showcase and case studies',
+    category: 'Agency',
+    icon: 'Palette',
+    config: {
+      projectDescription: 'Design and build a creative agency website that showcases our work with bold typography, smooth animations, and immersive project case studies. The site should feel premium and artistic while maintaining excellent usability.',
+      projectCategory: 'agency',
+      designDirection: 'editorial',
+      visualTheme: 'dark',
+      techStack: 'nextjs',
+      codingAgent: 'claude-code',
+      animationLevel: 'advanced',
+      responsiveTargets: ['mobile', 'tablet', 'desktop'],
+      requiredPages: 'Home (immersive hero with video/image, selected works preview, services overview, client logos), Work (project grid with filtering), Case Study (detailed project pages with images, process, results), Services (detailed service pages), About (team, culture, values), Contact (project inquiry form).',
+      requiredFunctionality: 'Smooth page transitions, scroll-triggered animations, image lazy loading with blur-up effect, project filtering by category, contact form with file upload for project briefs.',
+      deploymentTarget: 'vercel',
+      experienceLevel: 'expert',
+    },
+  },
+  {
+    id: 'blog',
+    name: 'Content Blog',
+    description: 'Fast, SEO-optimized blog with categories, search, and newsletter signup',
+    category: 'Blog',
+    icon: 'FileText',
+    config: {
+      projectDescription: 'Build a fast, SEO-optimized blog platform. Include a clean reading experience, category/tag filtering, search functionality, newsletter signup, and social sharing. Prioritize performance and readability.',
+      projectCategory: 'blog',
+      designDirection: 'editorial',
+      visualTheme: 'light',
+      techStack: 'nextjs',
+      codingAgent: 'claude-code',
+      animationLevel: 'minimal',
+      responsiveTargets: ['mobile', 'tablet', 'desktop'],
+      requiredPages: 'Home (featured posts, latest posts, categories), Blog listing (paginated, filterable), Individual post (reading experience with TOC), Category pages, About, Newsletter confirmation.',
+      requiredFunctionality: 'MDX or markdown-based content, full-text search, reading time estimates, table of contents generation, social sharing buttons, newsletter integration (ConvertKit/Mailchimp), RSS feed, syntax highlighting for code blocks.',
+      seoAccessibility: 'Generate static pages for SEO. Include structured data (Article schema), Open Graph images, sitemap, RSS feed. Optimize for Core Web Vitals. Support dark mode toggle.',
+      deploymentTarget: 'vercel',
+      experienceLevel: 'expert',
+    },
+  },
+  {
+    id: 'booking',
+    name: 'Booking Platform',
+    description: 'Service booking system with calendar, availability, and payment',
+    category: 'Booking',
+    icon: 'Calendar',
+    config: {
+      projectDescription: 'Build a service booking platform for a wellness/spa business. Include service catalog, interactive calendar with availability, booking flow with time slot selection, customer accounts, and admin panel for managing bookings.',
+      projectCategory: 'booking',
+      designDirection: 'luxury',
+      visualTheme: 'light',
+      techStack: 'nextjs',
+      codingAgent: 'claude-code',
+      animationLevel: 'polished',
+      responsiveTargets: ['mobile', 'tablet', 'desktop'],
+      requiredPages: 'Home (services overview, booking CTA), Services (list with details), Booking flow (service → date → time → details → payment), My Bookings (customer dashboard), Admin (calendar view, booking management).',
+      requiredFunctionality: 'Interactive calendar with availability indicators, time slot selection, booking confirmation emails, Stripe payment, customer accounts with booking history, admin calendar with drag-and-drop rescheduling, cancellation/refund policy.',
+      authDbApi: 'Customer authentication (email + OAuth). PostgreSQL for bookings, services, availability slots. Stripe for payments. SendGrid for email notifications.',
+      deploymentTarget: 'vercel',
+      experienceLevel: 'expert',
+    },
+  },
+  {
+    id: 'landing-minimal',
+    name: 'Minimal Landing Page',
+    description: 'Clean, conversion-focused landing page with strong typography',
+    category: 'Landing Page',
+    icon: 'Zap',
+    config: {
+      projectDescription: 'Create a minimal, conversion-focused landing page for a productivity app. Focus on clear messaging, strong typography, and a single clear call-to-action. Include social proof and a simple feature breakdown.',
+      projectCategory: 'landing-page',
+      designDirection: 'minimal',
+      visualTheme: 'light',
+      techStack: 'react',
+      codingAgent: 'generic',
+      animationLevel: 'minimal',
+      responsiveTargets: ['mobile', 'tablet', 'desktop'],
+      requiredPages: 'Single page with: Hero (headline, subheadline, CTA button, product mockup), Social proof (logos or stats), Features (3-4 key features with icons), Testimonial (1-2 quotes), Final CTA section, Footer.',
+      deploymentTarget: 'vercel',
+      experienceLevel: 'beginner',
+    },
+  },
+];
+
+export function getTemplateById(id: string): Template | undefined {
+  return templates.find(t => t.id === id);
+}
+
+export function getTemplatesByCategory(category: string): Template[] {
+  return templates.filter(t => t.category === category);
+}
